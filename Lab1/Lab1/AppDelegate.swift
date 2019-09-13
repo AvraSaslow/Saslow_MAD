@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  HelloWorld
+//  Lab1
 //
-//  Created by Avra Saslow on 8/29/19.
+//  Created by Avra Saslow on 9/12/19.
 //  Copyright © 2019 Avra Saslow. All rights reserved.
 //
 
