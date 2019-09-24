@@ -18,11 +18,11 @@ class ViewController: UIViewController {
     
     @IBAction func changeImage(_ sender: UISegmentedControl) {
         if TypeOfBox.selectedSegmentIndex == 0 {
-            titleLabel.text = "Cereal Box"
+            titleLabel.text = "cereal box"
             BoxImage.image=UIImage(named: "ricekrispies")
         }
         else if TypeOfBox.selectedSegmentIndex == 1 {
-            titleLabel.text = "Box Turtle"
+            titleLabel.text = "box turtle"
             BoxImage.image=UIImage(named: "turtle")
         }
     }
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         let fontSize = sender.value
         TextSizeLabel.text=String(format: "%.0f", fontSize)
         let fontSizeCGFloat = CGFloat(fontSize)
-        titleLabel.font = UIFont(name: "Didot", size: fontSizeCGFloat)
+        titleLabel.font = UIFont(name: "Cochin", size: fontSizeCGFloat)
         
     }
     
