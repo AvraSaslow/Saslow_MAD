@@ -21,8 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
    
     
     @IBAction func showAlert(_ sender: Any) {
-        let alertController = UIAlertController(title: "Jackets", message:
-            "Jacket, Puffy, Vest, Fleece, Long Sleeve, Flannel, Coat, Parka, Rain Jacket, Wind Breaker", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Whoa!", message:
+            "You should probably carpool!!", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         
         self.present(alertController, animated: true, completion: nil)
