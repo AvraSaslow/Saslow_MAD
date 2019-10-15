@@ -16,11 +16,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var commutingAmount: UITextField!
     @IBOutlet weak var calculateOutlet: UIButton!
     @IBAction func calculateAction(_ sender: Any) {
-        updateMilesAndGas(month: false)
+        updateMilesAndGas(month: false, bike: false, bus: false)
     }
     
     
-    func updateMilesAndGas(month: Bool) {
+    func updateMilesAndGas(month: Bool, bike: Bool, bus: Bool) {
         var commutingMiles:Float
         var avgSpeed:Float
         avgSpeed = 20
@@ -39,14 +39,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         commuteTime = (commutingMiles/avgSpeed)*60
         gasNeeded = commutingMiles/avgMPG
         
-        if commutingMiles > 50 {
+        if commutingMiles > 80 {
             let alertController = UIAlertController(title: "Whoa!", message:
                 "You should probably carpool!!", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
             
             self.present(alertController, animated: true, completion: nil)
         }
-        
+    
         
         //if we are calculating the whole month
         if month == false {
@@ -66,6 +66,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
             updateCommuteTime.text = String(monthlyCommute) + " minutes"
             updateGas.text = String(format: "%.0f", monthlyGas) + " gallons"
         }
+        
+        
+        //Assume bike average speed is 10 miles/hour
+        //Assume bus average speed is 12 miles/hour + 5 min wait each way
+        
+        var bikeCommute:Float
+        bikeCommute = (commutingMiles/10) * 60
+        if bike == true {
+            updateCommuteTime.text = String(bikeCommute) + " minutes"
+            updateGas.text = "0 gallons"
+        }
+        
+        if month == false && bike == true {
+            var monthlyBikeCommute:Float
+            monthlyBikeCommute = (bikeCommute * 20)
+            //t = d/r in minutes
+            updateCommuteTime.text = String(monthlyBikeCommute) + " minutes"
+        }
+    
+        var busCommute:Float
+        busCommute = ((commutingMiles/12) * 60) + 10
+        if bus == true {
+            updateCommuteTime.text = String(busCommute) + " minutes"
+            updateGas.text = "0 gallons"
+        }
+        
+        if month == false && bus == true {
+            var monthlyBusCommute:Float
+            monthlyBusCommute = (busCommute * 20)
+            //t = d/r in minutes
+            updateCommuteTime.text = String(monthlyBusCommute) + " minutes"
+        }
     }
     
     
@@ -79,12 +111,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //function that calculates monthly stats
     @IBOutlet weak var monthlySwitch: UISwitch!
     func showMonthlyCommute() {
-        if monthlySwitch.isOn{
-            updateMilesAndGas(month: true)
+        if monthlySwitch.isOn && updateTransportation.selectedSegmentIndex == 0{
+            updateMilesAndGas(month: true, bike: false, bus: false)
         }
-        else{
-            updateMilesAndGas(month: false)
+        if monthlySwitch.isOn && updateTransportation.selectedSegmentIndex == 1{
+            updateMilesAndGas(month: true, bike: true, bus: false)
         }
+        if monthlySwitch.isOn && updateTransportation.selectedSegmentIndex == 2{
+            updateMilesAndGas(month: true, bike: false, bus: true)
+        }
+        if !monthlySwitch.isOn && updateTransportation.selectedSegmentIndex == 0{
+            updateMilesAndGas(month: false, bike: false, bus: false)
+        }
+        if !monthlySwitch.isOn && updateTransportation.selectedSegmentIndex == 1{
+            updateMilesAndGas(month: false, bike: true, bus: false)
+        }
+        if !monthlySwitch.isOn && updateTransportation.selectedSegmentIndex == 2{
+            updateMilesAndGas(month: false, bike: false, bus: true)
+        }
+        
     }
     //action that calls show monthly commute function
     @IBAction func changeMonthly(_ sender: Any) {
@@ -99,13 +144,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updateImage(){
         if updateTransportation.selectedSegmentIndex == 0 {
             transportationImage.image=UIImage(named: "car_icon")
+            updateMilesAndGas(month: false, bike: false, bus: false)
         }
         if updateTransportation.selectedSegmentIndex == 1 {
             transportationImage.image=UIImage(named: "bike_icon")
+            updateMilesAndGas(month: false, bike: true, bus: false)
+            
         }
         else if updateTransportation.selectedSegmentIndex == 2 {
             transportationImage.image=UIImage(named: "bus_icon")
-            updateMilesAndGas(month: true)
+            updateMilesAndGas(month: false, bike: true, bus: true)
         }
     }
     
