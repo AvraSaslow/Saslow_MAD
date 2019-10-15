@@ -87,7 +87,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIT
     
     priceLabel.text = "$" + String(Total);
     }
- 
+    
     @IBAction func cabbageUpdatePrice(_ sender: Any) {
         updateTotalPrice()
     }
