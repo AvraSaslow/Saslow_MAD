@@ -100,9 +100,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIT
         updateTotalPrice()
     }
     
-    
-        
-        
+    //Sources for email:
+//medium.com/ios-os-x-development/send-email-content-from-your-ios-app-with-mfmailcomposeviewcontroller-12cdcecbc412
+//developer.apple.com/documentation/messageui/mfmailcomposeviewcontroller
+//www.hackingwithswift.com/example-code/uikit/how-to-send-an-email
     //MARK: IBAction Method for Button click
     @IBAction func sendEmail(_ sender: Any) {
         
