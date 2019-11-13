@@ -1,6 +1,5 @@
 package com.example.saslow.snob;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -14,10 +13,10 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView sportSelection;
+    private TextView snobSelection;
     private ToggleButton toggle;
-    private Spinner exercise;
-    private RadioGroup cost;
+    private Spinner travel;
+    private RadioGroup interest;
     private CheckBox foodCheckBox;
     private CheckBox coffeeCheckBox;
     private CheckBox artCheckBox;
@@ -28,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //get views
-        sportSelection = findViewById(R.id.sportTextView);
+        snobSelection = findViewById(R.id.sportTextView);
         toggle = findViewById(R.id.toggleButton);
-        exercise = findViewById(R.id.spinner);
-        cost = findViewById(R.id.radioGroup);
+        travel = findViewById(R.id.spinner);
+        interest = findViewById(R.id.radioGroup);
         foodCheckBox = findViewById(R.id.checkBox1);
         coffeeCheckBox = findViewById(R.id.checkBox2);
         artCheckBox = findViewById(R.id.checkBox3);
@@ -42,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         boolean location = toggle.isChecked();
 
         //spinner
-        String placesTravelled = String.valueOf(exercise.getSelectedItem());
+        String placesTravelled = String.valueOf(travel.getSelectedItem());
 
         //radio buttons
-        int kindOfSnob = cost.getCheckedRadioButtonId();
+        int kindOfSnob = interest.getCheckedRadioButtonId();
 
         //check boxes
         Boolean food = foodCheckBox.isChecked();
@@ -57,9 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         //check radio buttons
         if (kindOfSnob == -1) {
-            //toast
             Context context = getApplicationContext();
-            CharSequence text = "Please select a cost level";
+            CharSequence text = "Please select what interests you most";
             int duration = Toast.LENGTH_LONG;
 
             Toast toast = Toast.makeText(context, text, duration);
@@ -120,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //text view
-            sportSelection.setText(snobType);
+            snobSelection.setText(snobType);
         }
     }
 }
