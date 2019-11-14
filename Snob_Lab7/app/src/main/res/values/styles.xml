@@ -12,8 +12,8 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/darkerBlue</item>
-        <item name="colorAccent">@color/grey</item>
-        <item name="android:background">@color/green</item>
+        <item name="colorAccent">@color/darkerBlue</item>
+        <item name="android:background">@color/red</item>
     </style>
 
 </resources>

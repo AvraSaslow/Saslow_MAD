@@ -1,4 +1,4 @@
-package com.example.saslow.snob;
+package com.example.saslow.coup;
 
 import org.junit.Test;
 
