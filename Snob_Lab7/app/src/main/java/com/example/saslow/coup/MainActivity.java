@@ -67,14 +67,17 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     switch (government) {
-                        case "I have guns":
-                            shouldYouOverthrow = "i got guns";
+                        case "Current government is a dictatorship":
+                            shouldYouOverthrow = "Definitely try to overthrow";
                             break;
-                        case "I have swords":
-                            shouldYouOverthrow = "i got swords";
+                        case "Current government is a monarchy":
+                            shouldYouOverthrow = "If you are a royal, definitely try to overthrow";
                             break;
-                        case "I have bombs":
-                            shouldYouOverthrow = "i got bombs";
+                        case "Current government is a democracy":
+                            shouldYouOverthrow = "Probably don't overthrow, just run for office?";
+                            break;
+                        case "Current government is communist":
+                            shouldYouOverthrow = "Try to overthrow, know you will probably fail";
                             break;
                         default:
                             shouldYouOverthrow = "deafult";
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             } else { //if they have bombs
                 if ((whatWeapon == R.id.radioButton1) || (whatWeapon == R.id.radioButton3)) {
                     if (freedom) {
-                        shouldYouOverthrow = "You should overthrow";//academics
+                        shouldYouOverthrow = "You should overthrow, you might get freedom";//academics
                     }
                     else if (glory) {
                         shouldYouOverthrow = "You probably won't get glory; you shouldn't overthrow";//culture
@@ -93,21 +96,46 @@ public class MainActivity extends AppCompatActivity {
                     }else {
                         shouldYouOverthrow = "defalut";
                     }
-                } else {
+
+                }
+
+                else {
                     switch (government) {
-                        case "I have guns":
-                            shouldYouOverthrow = "g";
+                        case "Current government is a dictatorship":
+                            shouldYouOverthrow = "Definitely try to overthrow";
                             break;
-                        case "I have swords":
-                            shouldYouOverthrow = "s";
+                        case "Current government is a monarchy":
+                            shouldYouOverthrow = "If you are a royal, definitely try to overthrow";
                             break;
-                        case "I have bombs":
-                            shouldYouOverthrow = "b";
+                        case "Current government is a democracy":
+                            shouldYouOverthrow = "Probably don't overthrow, just run for office?";
+                            break;
+                        case "Current government is communist":
+                            shouldYouOverthrow = "Try to overthrow, know you will probably fail";
                             break;
                         default:
-                            shouldYouOverthrow = "You shouldn't overthrow";
+                            shouldYouOverthrow = "deafult";
                     }
                 }
+                if ((whatWeapon == R.id.radioButton1) || (whatWeapon == R.id.radioButton2) || (whatWeapon == R.id.radioButton3)) {
+                    switch (government) {
+                        case "Current government is a dictatorship":
+                            shouldYouOverthrow = "Definitely try to overthrow";
+                            break;
+                        case "Current government is a monarchy":
+                            shouldYouOverthrow = "If you are a royal, definitely try to overthrow";
+                            break;
+                        case "Current government is a democracy":
+                            shouldYouOverthrow = "Probably don't overthrow?";
+                            break;
+                        case "Current government is communist":
+                            shouldYouOverthrow = "Try to overthrow, know you will probably fail";
+                            break;
+                        default:
+                            shouldYouOverthrow = "hoogieboogie";
+                    }
+                }
+
             }
 
             //text view
