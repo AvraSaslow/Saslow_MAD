@@ -16,7 +16,7 @@
         <item name="android:background">@drawable/purple_blue_background</item>
         <item name="colorAccent">@color/space</item>
         <item name="android:textColor">#FFF</item>
-        <item name="android:button">@color/stars</item>
+        <item name="android:button">@color/space</item>
 
     </style>
 
