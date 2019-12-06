@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Solar System Explorer</string>
+    <string name="title">Explore the Solar System!</string>
+    <string name="choosePlanet">Choose a Planet</string>
+    <string name="button">3...2...1...Take Off!</string>
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string name="title_activity_planet">PlanetActivity</string>
+    <string name="planetBlurb">Info about the planet you chose!!</string>
+</resources>

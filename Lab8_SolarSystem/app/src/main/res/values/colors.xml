@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="lightspace">#022859</color>
+    <color name="space">#0C0826</color>
+    <color name="galaxy">#4F4573</color>
+    <color name="stars">#7890BF</color>
+
+
+</resources>
