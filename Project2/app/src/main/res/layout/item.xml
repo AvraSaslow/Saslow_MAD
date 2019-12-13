@@ -13,15 +13,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/text"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Decrement"
-        android:layout_marginLeft="120dp"
+        android:layout_marginLeft="100dp"
         android:id="@+id/decrementButton"
-        android:text="-" />
+        android:text="@string/minus"
+        android:textColor="@color/minusButton"/>
 
 
     <Button
@@ -29,7 +32,8 @@
         android:layout_height="wrap_content"
         android:onClick="Increment"
         android:id="@+id/incrementButton"
-        android:text="+" />
+        android:text="@string/plus"
+        android:textColor="@color/plusButton"/>
 
     <TextView
         android:id="@+id/vegetable_number"
@@ -38,7 +42,7 @@
         android:layout_marginRight="2dp"
         android:text="0"
         android:textSize="16sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:textColor="@color/text"/>
 
 </LinearLayout>
