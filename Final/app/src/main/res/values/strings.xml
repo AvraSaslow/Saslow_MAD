@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Builda Burrito</string>
+    <string name="toggleOff">Meat</string>
+    <string name="toggleOn">Veggie</string>
+    <string name="title">Builda Burrito!</string>
+    <string name="name">Enter your name</string>
+    <string name="topping1">guacamole</string>
+    <string name="topping2">pico de gallo</string>
+    <string name="topping3">mango salsa</string>
+    <string name="build">Make the burrito!</string>
+    <string-array name="place">
+        <item>I am on The Hill</item>
+        <item>I am near 29th Street</item>
+        <item>I am on Pearl Street</item>
+    </string-array>
+    <string name="store">Take me to the resturant I want!</string>
+    <string name="title_activity_burrito">BurritoActivity</string>
+    <string name="suggested_resturant">You should go... </string>
+</resources>
